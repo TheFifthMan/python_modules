@@ -131,6 +131,9 @@ def sub1():
 # 总结
 就这样，我们模拟了如何在python中使用日志记录，这对于开发来说是一件提高效率和产品质量很重要的事情
 
+# 代码地址
+https://github.com/TheFifthMan/python_modules 
+
 # reference
 http://yshblog.com/blog/125
 
