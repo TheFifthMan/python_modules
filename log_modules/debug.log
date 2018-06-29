@@ -1,0 +1,8 @@
+[2018-06-29 09:15:50,326][MainThread:9024][main.sub:DEBUG(5)]
+[sub:sub1]:This is sub1
+[2018-06-29 09:15:50,326][MainThread:9024][main:ERROR(11)]
+[main:main]:main debug
+[2018-06-29 09:22:39,462][MainThread:10440][main.sub:DEBUG(5)]
+[sub:sub1]:This is sub1
+[2018-06-29 09:22:39,462][MainThread:10440][main:ERROR(11)]
+[main:main]:main debug
