@@ -23,8 +23,9 @@ if "__main__" == __name__:
     threads.append(t2)
 
     for t in threads:
-        print(t.daemon)
+        #print(t.daemon)
         t.start()
+        t.join()
     
     print("The thread name is {} and end in {}".format(threading.current_thread().name,ctime()))
  

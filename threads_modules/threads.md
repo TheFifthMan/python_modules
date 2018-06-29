@@ -89,13 +89,56 @@ for t in threads:
     t.start()
     t.join()
 ```
-2. 最后一个子线程加join
+2. 先启动,再遍历子线程加join
 ```
 for t in threads:
     print(t.daemon)
     t.start()
-t.join()
+
+for t in threads:
+    t.join()
 ```
 
 ## start方法
 这个方法很直白，就是启动一个线程。
+
+# 线程类
+```python
+import threading
+from time import ctime,sleep
+
+# 引入多线程类
+# 只能重写两个方法，一个__init__ 一个是run
+class MyThread(threading.Thread):
+
+    def run(self):
+        for i in range(2):
+            print("The thread name is {} and start in {}".format(threading.current_thread().name,ctime()))
+            sleep(1)
+            print("The thread name is {} and end in {}".format(threading.current_thread().name,ctime()))
+
+if __name__ == "__main__":
+    threads = []
+    for i in range(2):
+        mt = MyThread()
+        threads.append(mt)
+
+    for t in threads:
+        t.start()
+
+    for t in threads:
+        t.join()
+
+'''
+The thread name is Thread-1 and start in Fri Jun 29 17:04:41 2018
+The thread name is Thread-2 and start in Fri Jun 29 17:04:41 2018
+The thread name is Thread-1 and end in Fri Jun 29 17:04:42 2018
+The thread name is Thread-1 and start in Fri Jun 29 17:04:42 2018
+The thread name is Thread-2 and end in Fri Jun 29 17:04:42 2018
+The thread name is Thread-2 and start in Fri Jun 29 17:04:42 2018
+The thread name is Thread-1 and end in Fri Jun 29 17:04:43 2018
+The thread name is Thread-2 and end in Fri Jun 29 17:04:43 2018
+'''
+```
+# 总结
+以上学习了python多线程的简单用法，实际中用法肯定比较复杂，比如说锁，比如说队列的多线程，还有待探索。
