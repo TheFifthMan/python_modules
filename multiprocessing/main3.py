@@ -8,14 +8,14 @@ from gevent import monkey
 monkey.patch_all()
 from datetime import datetime 
 from gevent.queue import Queue
-from multiprocessing import Process,Pool,freeze_support,Array
+from multiprocessing import Process,Pool,freeze_support,Array,Queue
 import signal,os,time
-
 
 # 失败的例子
 # 有些点还没想清楚
 
 q=Queue()
+q2=Queue()
 
 def producer():
     for i in range(10):
