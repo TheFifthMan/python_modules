@@ -21,7 +21,6 @@ if __name__ == "__main__":
     producer(q)
     for i in range(10):
         p = Process(target=worker,args=(q,))
-
         p.start()
     
     p.join()

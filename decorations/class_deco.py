@@ -12,4 +12,3 @@ def foo():
 
 
 foo()
-print(foo.__name__)
