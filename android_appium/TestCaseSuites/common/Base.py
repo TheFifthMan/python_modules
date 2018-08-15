@@ -1,5 +1,6 @@
 import unittest
 from .config import Config
+from appium import webdriver
 
 class BaseTest(unittest.TestCase):
     def setUp(self):
@@ -10,3 +11,6 @@ class BaseTest(unittest.TestCase):
         desired_caps['appPackage'] = Config['appPackage']   
         desired_caps['appActivity'] = Config['appActivity']  
         self.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
+
+    def tearDown(self):
+            self.driver.quit()
